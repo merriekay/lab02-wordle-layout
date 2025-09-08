@@ -49,14 +49,26 @@ header h1 {
 }
 
 .tile {
-    /* TODO: Set the size using CSS variables */
-    /* TODO: Add border styling */
-    /* TODO: Use flexbox to center any content */
-    background-color: var(--background-color);
-    border: 2px solid var(--border-color);
-    font-size: 2rem;
-    font-weight: bold;
-    text-transform: uppercase;
+  /* immediate visibility */
+  width: var(--tile-size);
+  height: var(--tile-size);
+  box-sizing: border-box;
+  background-color: var(--tile-bg);
+  border: 2px solid var(--tile-border);
+  border-radius: var(--tile-radius);
+
+  /* see the letter centered as soon as there is content */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* existing styles */
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  /* tiny animation so changes “feel” responsive */
+  transition: all .15s ease;
 }
 
 footer {
